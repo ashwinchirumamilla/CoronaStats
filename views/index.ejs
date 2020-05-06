@@ -1,0 +1,41 @@
+<%- include('partials/header'); %>
+
+<div>
+
+    <table class="table">
+
+        <thead class="thead-light">
+
+            <tr>
+                <th><%= country ? 'Date' : 'ID' %></th>
+                <th>Total <%= country ? name : 'Global' %> Cases</th>
+                <th>Total <%= country ? name : 'Global' %> Cases Recovered</th>
+                <th>Total <%= country ? name : 'Global' %> Cases Unresolved</th>
+                <th>Total <%= country ? name : 'Global' %> Deaths</th>
+                <th>Total <%= country ? name : 'Global' %> New Cases (Daily)</th>
+                <th>Toal <%= country ? name : 'Global' %> New Deaths (Daily)</th>
+                <th><%= country ? 'Affected Country' : 'Total Affected Countries' %></th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            <tr>
+                <th><%= country ? date : stats.id %></th>
+                <td><%= stats.total_cases %></td>
+                <td><%= country ? stats.total_recoveries : stats.total_recovered %></td>
+                <td><%= country ? 'N/A' : stats.total_unresolved %></td>
+                <td><%=  stats.total_deaths %></td>
+                <td><%= country ? stats.new_daily_cases : stats.total_new_cases_today %></td>
+                <td><%= country ? stats.new_daily_deaths : stats.total_new_deaths_today %></td>
+                <td><%= country ? name : stats.total_affected_countries %></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+</div>
+<%- include('partials/chart') %>
+</body>
+</html>

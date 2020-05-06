@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <nav class="navbar">
+                <span class="navbar-brand mb-0 h1" ><a href="/">Covid-19 Statistics</a></span>
+                
+                <form method='post' action='/country'>
+                    <label for='country'>Country:</label>
+                    <input type='text' class='form-control' value='US' name='country'>
+                    <label for='date'>Date</label>
+                    <input type='date' name='date' min='2020-01-22' max='2020-05-05' value = '2020-05-05'>
+                    <button type='submit' class='btn btn-success float right'>Filter</button>
+                </form>
+            </nav>

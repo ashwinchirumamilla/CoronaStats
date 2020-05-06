@@ -1,0 +1,52 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<div id = 'Jan'title=<%= monthData.Jan%>></div>
+<div id ='Feb'title=<%= monthData.Feb%>></div>
+<div id='Mar'title=<%= monthData.Mar%>></div>
+<div id='Apr'title=<%= monthData.Apr%>></div>
+<div id='May'title=<%= monthData.May%>></div>
+<canvas id="myChart" width="100" height="100"></canvas>
+<script>
+var ctx = document.getElementById('myChart');
+var Jan = document.getElementById('Jan').title;
+var Feb = document.getElementById('Feb').title;
+var Mar = document.getElementById('Mar').title;
+var Apr = document.getElementById('Apr').title;
+var May = document.getElementById('May').title;
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+            label: 'Total Cases',
+            data: [Jan, Feb, Mar, Apr, May],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
